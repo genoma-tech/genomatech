@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
     <title>GenomaTech - Conectados por el conocimiento</title>
     <style>
         /* Importar la fuente Liberation Sans */
@@ -131,8 +131,10 @@
         const nodes = [];
         const mouse = { x: null, y: null, radius: 200 };
         let lastMouseX, lastMouseY;
-        const numNodes = 150;
-
+        let numNodes = 150;
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            numNodes = 50;
+        }
 
         function resizeCanvas() {
             canvas.width = window.innerWidth;
