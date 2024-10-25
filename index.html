@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenomaTech - Conectados por el conocimiento</title>
+    <style>
+        /* Importar la fuente Liberation Sans */
+        @font-face {
+            font-family: 'Liberation Sans';
+            src: url('https://fonts.cdnfonts.com/css/liberation-sans') format('truetype');
+        }
+
+        /* Estilos básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos de la página */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Liberation Sans', Arial, sans-serif;
+            overflow: hidden;
+            color: #2d2e30;
+            position: relative;
+            background-color: #1a1a2e;
+            cursor: url('./dna.svg') auto;
+        }
+
+        /* Fondo canvas */
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            border-radius: 10px;
+            background-color: rgb(0 0 0 / 8%);
+            max-width: 450px;
+            text-align: center;
+            z-index: 1;
+        }
+
+        /* Logo */
+        .logo {
+            width: 300px;
+            margin-bottom: 20px;
+        }
+
+        /* Lema de la empresa */
+        .slogan {
+            font-size: 20px;
+            font-weight: 600;
+            color: #0077b5;
+            margin: 15px 0 30px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Botón de LinkedIn */
+        .linkedin-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            color: #ffffff;
+            background-color: #0077b5;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 25px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .linkedin-link:hover {
+            background-color: #005983;
+        }
+
+        /* Icono de LinkedIn */
+        .linkedin-icon {
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+            fill: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="bgCanvas"></canvas>
+
+    <div class="container">
+        <!-- Logo de la Startup -->
+        <img src="genT.svg" alt="Logo de GenomaTech" class="logo">
+
+        <!-- Lema de la empresa -->
+        <div class="slogan">Conectados por el conocimiento</div>
+
+        <!-- Enlace a LinkedIn con icono -->
+        <a href="https://www.linkedin.com/company/genomatech" target="_blank" class="linkedin-link">
+            <svg xmlns="http://www.w3.org/2000/svg" class="linkedin-icon" viewBox="0 0 24 24">
+                <path
+                    d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0zM7.12 20.48H3.56V9h3.56v11.48zM5.34 7.56a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM20.48 20.48h-3.56v-5.64c0-1.35-.03-3.08-1.88-3.08-1.88 0-2.17 1.47-2.17 2.99v5.73h-3.56V9h3.42v1.57h.05c.48-.9 1.64-1.84 3.37-1.84 3.6 0 4.26 2.37 4.26 5.44v6.31z" />
+            </svg>
+            <span>Conócenos en LinkedIn</span>
+        </a>
+    </div>
+
+    <!-- Script para nodos en movimiento -->
+    <script>
+        const canvas = document.getElementById("bgCanvas");
+        const ctx = canvas.getContext("2d");
+        const nodes = [];
+        const mouse = { x: null, y: null, radius: 200 };
+        let lastMouseX, lastMouseY;
+        const numNodes = 150;
+
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+
+        class Node {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.size = Math.random() * 4 + 1;
+                this.dx = Math.random() * 2 - 1;
+                this.dy = Math.random() * 2 - 1;
+                this.color = Math.random() > 0.66 ? 'rgba(255, 255, 255, 0.85)' : (Math.random() > 0.5 ? 'rgba(113, 156, 229, 0.85)' : 'rgba(180, 88, 183, 0.85)');
+            }
+
+            update() {
+                this.x += this.dx;
+                this.y += this.dy;
+
+                if (this.x < 0 || this.x > canvas.width) this.dx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.dy *= -1;
+
+                const distX = mouse.x - this.x;
+                const distY = mouse.y - this.y;
+                const distance = Math.sqrt(distX * distX + distY * distY);
+
+                if (distance < mouse.radius) {
+                    this.x -= distX / distance * 2;
+                    this.y -= distY / distance * 2;
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        function createNodes() {
+            nodes.length = 0;
+            for (let i = 0; i < numNodes; i++) {
+                nodes.push(new Node(Math.random() * canvas.width, Math.random() * canvas.height));
+            }
+        }
+
+        function connectNodes() {
+            for (let a = 0; a < nodes.length; a++) {
+                for (let b = a + 1; b < nodes.length; b++) {
+                    let dist = Math.hypot(nodes[a].x - nodes[b].x, nodes[a].y - nodes[b].y);
+                    if (dist < 100) {
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / 100})`;
+                        ctx.lineWidth = 0.65;
+                        ctx.beginPath();
+                        ctx.moveTo(nodes[a].x, nodes[a].y);
+                        ctx.lineTo(nodes[b].x, nodes[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+
+        window.addEventListener("mousemove", (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+            if (nodes.length > numNodes) nodes.shift();
+        });
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            nodes.forEach(node => {
+                node.update();
+                node.draw();
+            });
+            connectNodes();
+            requestAnimationFrame(animate);
+        }
+
+        createNodes();
+        animate();
+
+        window.addEventListener("resize", () => {
+            resizeCanvas();
+            createNodes();
+        });
+    </script>
+</body>
+
+</html>
