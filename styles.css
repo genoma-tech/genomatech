@@ -45,7 +45,6 @@ canvas {
     border-radius: 10px;
     background-color: ghostwhite;
     width: 60dvw;
-    height: 85dvh;
     text-align: center;
     z-index: 1;
     flex-wrap: nowrap;
