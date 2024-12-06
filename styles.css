@@ -111,8 +111,11 @@ canvas {
     width: 24px;
     height: 24px;
     margin-right: 10px;
-    fill: #000000;
+    fill: #ffffff;
     transition: fill 0.3s ease;
+}
+.email-icon {
+    filter: brightness(0) invert(1); /* Cambia el color del icono a blanco */
 }
 
 .contact-link:hover .contact-icon {

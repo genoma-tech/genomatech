@@ -130,6 +130,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     const nombre = document.getElementById('nombre').value;
     const email = document.getElementById('email').value;
     const asunto = document.getElementById('asunto').value;
+    const org = document.getElementById('organization').value;
     const mensaje = document.getElementById('mensaje').value;
 
     const payload = {
@@ -140,6 +141,7 @@ document.getElementById('contactForm').addEventListener('submit', function (even
                 { name: "Nombre", value: nombre },
                 { name: "Email", value: email },
                 { name: "Asunto", value: asunto },
+                { name: "Organización", value: org },
                 { name: "Mensaje", value: mensaje }
             ],
             color: 3447003
