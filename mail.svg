@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="993.2243"
+   height="719.41577"
+   viewBox="0 0 993.2243 719.41577"
+   xml:space="preserve"
+   id="svg1"
+   sodipodi:docname="mail.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+   id="namedview1"
+   pagecolor="#505050"
+   bordercolor="#ffffff"
+   borderopacity="1"
+   inkscape:showpageshadow="0"
+   inkscape:pageopacity="0"
+   inkscape:pagecheckerboard="1"
+   inkscape:deskcolor="#505050"
+   inkscape:zoom="0.64"
+   inkscape:cx="567.1875"
+   inkscape:cy="289.84375"
+   inkscape:window-width="1920"
+   inkscape:window-height="1009"
+   inkscape:window-x="1912"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="g1" />
+<desc
+   id="desc1">Created with Fabric.js 5.2.4</desc>
+<defs
+   id="defs1">
+</defs>
+
+
+<g
+   transform="matrix(45,0,0,45,493.39626,385.12643)"
+   id="g1">
+<path
+   style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+   d="M 12,11.69007 2.16,5.62 C 2.1596383,4.9754676 2.8253392,4.5321012 3.1476015,4.5305026 L 21,4.4419417 C 21.389995,4.4400017 22.47,4.44 22.84,5.12 Z M 1.9384797,7.803941 1.968,17.428652 c 0.00339,1.104563 0.8954305,2 2,2 h 16.885609 c 1.104569,0 2.150702,-0.895437 2.147314,-2 L 22.971403,7.803941 13.574,13.304376 c -0.98106,0.619481 -2.23094,0.619481 -3.212,0 z"
+   stroke-linecap="round"
+   id="path1"
+   transform="translate(-12.4,-12.5)"
+   inkscape:label="path1"
+   sodipodi:nodetypes="cczzcccsssscccc" />
+</g>
+</svg>
