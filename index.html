@@ -3,9 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.75">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GenomaTech - Conectados por el conocimiento</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg" href="genT.svg" />
 </head>
 
 <body>
@@ -13,11 +14,14 @@
 
     <div class="container">
         <div id="logoContainer">
-            <!-- Logo de la Startup -->
-            <img src="genT.svg" alt="Logo de GenomaTech" class="logo">
+            <div>
+                <!-- Logo de la Startup -->
+                <img src="genT.svg" alt="Logo de GenomaTech" class="logo">
 
-            <!-- Lema de la empresa -->
-            <div class="slogan">Conectados por el conocimiento</div>
+                <!-- Lema de la empresa -->
+                <div class="slogan">Conectados por el conocimiento</div>
+            </div>
+
             <div id="logoContactos">
                 <!-- Enlace a LinkedIn con icono -->
                 <a href="https://www.linkedin.com/company/genomatech" target="_blank" class="contact-link">
@@ -34,52 +38,44 @@
                     <span>Envíanos un correo</span>
                 </a>
             </div>
-
         </div>
         <div id="form">
             <div class="contact_form">
-
                 <div class="formulario">
                     <h1>Contáctenos</h1>
-                    <h3>Estamos a un mensaje de distancia, trabajaremos juntos en lo que necesitas. </h3>
+                    <h3>Estamos a un mensaje de distancia, trabajaremos juntos en lo que necesitas.</h3>
 
                     <form id="contactForm">
                         <p>
-                            <label for="nombre" class="colocar_nombre">Nombre completo
-                                <span class="obligatorio">*</span>
-                            </label>
-                            <input type="text" name="introducir_nombre" id="nombre" required="obligatorio"
+                            <label for="nombre" class="colocar_nombre">Nombre completo <span
+                                    class="obligatorio">*</span></label>
+                            <input type="text" name="introducir_nombre" id="nombre" required
                                 placeholder="Escribe tu nombre">
                         </p>
 
                         <p>
-                            <label for="email" class="colocar_email">Email
-                                <span class="obligatorio">*</span>
-                            </label>
-                            <input type="email" name="introducir_email" id="email" required="obligatorio"
+                            <label for="email" class="colocar_email">Email <span class="obligatorio">*</span></label>
+                            <input type="email" name="introducir_email" id="email" required
                                 placeholder="Escribe tu Email">
                         </p>
 
                         <p>
-                            <label for="organization" class="colocar_organization">Organización
-                                <span class="obligatorio">*</span>
-                            </label>
-                            <select name="introducir_organization" id="organization" required="obligatorio">
-                                <option value="" disabled selected>Selecciona un organización</option>
-                                <option value="reunion">Universidad</option>
-                                <option value="info_ayuda">Grupo de investigación</option>
-                                <option value="info_ayuda">Empresa</option>
-                                <option value="colaboracion">Particular</option>
-                                <option value="colaboracion">Privado</option>
-                                <option value="servicio">Otros</option>
+                            <label for="organization" class="colocar_organization">Organización <span
+                                    class="obligatorio">*</span></label>
+                            <select name="introducir_organization" id="organization" required>
+                                <option value="" disabled selected>Selecciona una organización</option>
+                                <option value="universidad">Universidad</option>
+                                <option value="investigacion">Grupo de investigación</option>
+                                <option value="empresa">Empresa</option>
+                                <option value="particular">Particular</option>
+                                <option value="privado">Privado</option>
+                                <option value="otros">Otros</option>
                             </select>
                         </p>
 
                         <p>
-                            <label for="asunto" class="colocar_asunto">Asunto
-                                <span class="obligatorio">*</span>
-                            </label>
-                            <select name="introducir_asunto" id="asunto" required="obligatorio">
+                            <label for="asunto" class="colocar_asunto">Asunto <span class="obligatorio">*</span></label>
+                            <select name="introducir_asunto" id="asunto" required>
                                 <option value="" disabled selected>Selecciona un asunto</option>
                                 <option value="reunion">Reunión</option>
                                 <option value="info_ayuda">Info/ayuda</option>
@@ -88,39 +84,34 @@
                             </select>
                         </p>
 
-
                         <p>
-                            <label for="mensaje" class="colocar_mensaje">Mensaje
-                                <span class="obligatorio">*</span>
-                            </label>
-                            <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje"
-                                required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea>
+                            <label for="mensaje" class="colocar_mensaje">Mensaje <span
+                                    class="obligatorio">*</span></label>
+                            <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required
+                                placeholder="Deja aquí tu comentario..."></textarea>
                         </p>
-                        <p>
+
                         <div id="consent">
                             <input type="checkbox" class="consent-checkbox" id="terms" required>
                             <label class="consent-text" for="terms">Acepto que mis datos serán utilizados únicamente
-                                para fines de
-                                contacto.</label>
+                                para fines de contacto.</label>
                         </div>
-
-                        </p>
 
                         <button type="submit" name="enviar_formulario" id="enviar">
                             <p>Enviar</p>
                         </button>
 
                         <p class="aviso">
-                            <span class="obligatorio"> * </span>los campos son obligatorios.
+                            <span class="obligatorio">*</span> los campos son obligatorios.
                         </p>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
     <div id="notification" class="notification hidden"></div>
-
     <script src="script.js"></script>
-
 </body>
+
 </html>
