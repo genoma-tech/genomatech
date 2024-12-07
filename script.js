@@ -133,36 +133,30 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     const org = document.getElementById('organization').value;
     const mensaje = document.getElementById('mensaje').value;
 
-    const payload = {
-        content: "Nuevo mensaje del formulario de contacto",
-        embeds: [{
-            title: "Detalles del formulario",
-            fields: [
-                { name: "Nombre", value: nombre },
-                { name: "Email", value: email },
-                { name: "Asunto", value: asunto },
-                { name: "Organización", value: org },
-                { name: "Mensaje", value: mensaje }
-            ],
-            color: 3447003
-        }]
-    };
+    // Construimos la data en formato application/x-www-form-urlencoded
+    const formData = new URLSearchParams();
+    formData.append('nombre', nombre);
+    formData.append('email', email);
+    formData.append('asunto', asunto);
+    formData.append('organizacion', org);
+    formData.append('mensaje', mensaje);
 
     fetch(workerURL, {
         method: "POST",
         headers: { 
-            "Content-Type": "application/json",
-            // "X-Auth-Token": "mi-token-secreto" // Si se usa un token
+            "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: JSON.stringify(payload)
-    }).then(response => {
+        body: formData.toString()
+    })
+    .then(response => {
         if (response.ok) {
             showNotification('Mensaje enviado correctamente', 'success');
             document.getElementById('contactForm').reset();
         } else {
             showNotification('Error al enviar el mensaje', 'error');
         }
-    }).catch(error => {
+    })
+    .catch(error => {
         console.error('Error:', error);
         showNotification('Error al enviar el mensaje', 'error');
     });
