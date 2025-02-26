@@ -32,14 +32,13 @@
 header {
   line-height: 1.5;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  column-gap: 35dvw;
   align-items: center;
   flex-direction: row;
-  position: fixed;
   background-color: whitesmoke;
-  padding: 10px 0px 10px 0px;
-  border-radius: 0px 0px 10px 10px;
-  width: 70dvw;
+  padding: 7px 0px 7px 0px;
+  width: 100%;
   z-index: 10;
 }
 .logo-link {
@@ -53,6 +52,7 @@ header {
 }
 .logo-container {
   margin-left: 24px;
+  display: flex;
 }
 
 .logo {

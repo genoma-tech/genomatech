@@ -84,7 +84,7 @@ function handleSubmit(event) {
     <div class="contact-container">
       <!-- Bloque con logo y enlaces de contacto (LinkedIn y mail) -->
       <div class="logo-container">
-        <div>
+        <div class="logo-slogan">
           <img src="../assets/img/logo.svg" alt="Logo de GenomaTech" class="logo"/>
           <div class="slogan">Conectados por el conocimiento</div>
         </div>
@@ -213,18 +213,6 @@ function handleSubmit(event) {
               >Acepto que mis datos serán utilizados únicamente para fines de contacto.</label
               >
             </div>
-            <div class="consent-container" id="consent">
-              <input
-                  type="checkbox"
-                  class="consent-checkbox"
-                  id="terms"
-                  required
-              />
-              <label class="consent-text" for="terms"
-              >Acepto que Celine me envíe memes de gatos en una newsletter.</label
-              >
-            </div>
-
             <button type="submit" name="enviar_formulario" id="enviar">
               <p>Enviar</p>
             </button>
@@ -250,6 +238,8 @@ function handleSubmit(event) {
   padding: 2rem 1rem;
   display: flex;
   justify-content: center;
+  max-height: calc(100dvh - 60px);
+  color: black;
 }
 
 /* Estructura interior, adaptando la clase .container del HTML original */
@@ -278,8 +268,12 @@ function handleSubmit(event) {
   justify-content: center;
 }
 
+.logo-slogan {
+  text-align: center;
+}
+
 .logo {
-  width: 200px;
+  width: 250px;
   margin-bottom: 1rem;
 }
 
@@ -300,6 +294,11 @@ function handleSubmit(event) {
   gap: 15px;
 }
 
+.logo-contactos > a > span {
+  font-weight: bold;
+  font-size: 16px;
+}
+
 .contact-link {
   display: flex;
   align-items: center;
@@ -314,8 +313,9 @@ function handleSubmit(event) {
   transition: background-color 0.3s ease;
 }
 
-.contact-link:hover {
-  background-color: #5c8ad2;
+.contact-link:hover .contact-icon {
+  box-shadow: 0px 0px 20px 2px white, inset 0px 0px 55px -25px white;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 /* Íconos de Contacto */
@@ -323,6 +323,7 @@ function handleSubmit(event) {
   width: 24px;
   height: 24px;
   margin-right: 8px;
+  fill: #ffffff;
 }
 
 .email-icon {
@@ -345,15 +346,19 @@ function handleSubmit(event) {
 }
 
 .formulario h1 {
-  font-size: 1.75rem;
+  font-size: 2.5rem;
   color: #b458b8;
   margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .formulario h3 {
   font-size: 1rem;
   color: #333;
   margin-bottom: 2rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 /* Inputs y selects */
@@ -381,7 +386,7 @@ function handleSubmit(event) {
 .formulario label {
   display: block;
   font-weight: 500;
-  margin-top: 1rem;
+  margin-top: 10px;
 }
 
 /* Botón de envío */
@@ -418,6 +423,7 @@ function handleSubmit(event) {
 
 .consent-checkbox {
   transform: scale(1.1);
+  width: 10px !important;
 }
 
 .consent-text {

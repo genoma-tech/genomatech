@@ -15,10 +15,9 @@
   <!-- Sección: Impulsando la bioinformática -->
   <section class="section-card">
     <div class="card-content">
-      <h2>Innovación en Bioinformática y Análisis Genómico</h2>
+      <h2>Análisis ómico</h2>
       <p>
-        Servicios de consultoría y herramientas Python para análisis genómico en GenomaTech: descubre la innovación
-        bioinformática
+        Aplicamos herramientas bioinformáticas de vanguardia para procesar y analizar datos genómicos, transcriptómicos, proteómicos y metagenómicos. Nuestro enfoque combina precisión y eficiencia, permitiendo a investigadores y empresas extraer información clave para sus proyectos sin necesidad de invertir en infraestructura propia.
       </p>
     </div>
   </section>
@@ -26,86 +25,28 @@
   <!-- Sección: Impulsando la bioinformática -->
   <section class="section-card">
     <div class="card-content">
-      <h2>Impulsando la bioinformática</h2>
+      <h2>Accesibilidad y optimización</h2>
       <p>
-        Innovación en biotecnología y bioinformática.
+        Eliminamos las barreras técnicas y económicas del análisis bioinformático, ofreciendo soluciones eficientes sin la necesidad de grandes inversiones en infraestructura o personal especializado. Con nuestro enfoque, democratizamos el acceso a tecnologías avanzadas, acelerando la toma de decisiones y potenciando la innovación.
       </p>
     </div>
   </section>
 
   <!-- Sección: Análisis automatizado -->
-  <section class="section-card reverse">
-    <div class="card-content">
-      <h2>Análisis automatizado</h2>
-      <p>
-        En GenomaTech, ofrecemos una herramienta basada en Python que automatiza
-        el análisis de datos genómicos, desde FASTQ hasta informes completos y
-        accesibles.
-      </p>
-    </div>
-    <div class="card-image-wrapper">
-      <img
-          alt=""
-          class="card-image"
-          src="../assets/img/analisisAuto.webp"
-      />
-    </div>
-  </section>
-
-  <!-- Sección: Consultoría especializada -->
   <section class="section-card">
-    <div class="card-image-wrapper">
-      <img
-          alt=""
-          class="card-image"
-          src="../assets/img/consultoria.webp"
-      />
-    </div>
     <div class="card-content">
-      <h2>Consultoría especializada</h2>
+      <h2>Asesoramiento personalizado</h2>
       <p>
-        Nuestro equipo de expertos en biotecnología y bioinformática ofrece
-        servicios de consultoría para optimizar tus proyectos y procesos
-        genómicos.
+        Nos adaptamos a las necesidades específicas de cada cliente, brindando un servicio colaborativo y accesible. Acompañamos a empresas y grupos de investigación en cada etapa del análisis, asegurando que los resultados sean comprensibles y aplicables a sus objetivos científicos o estratégicos.
       </p>
     </div>
-  </section>
-
-  <!-- Sección: Informes comprensibles -->
-  <section class="section-card reverse">
-    <div class="card-content">
-      <h2>Informes comprensibles</h2>
-      <p>
-        Proporcionamos informes detallados y comprensibles que facilitan la
-        gestión y comprensión de los datos genómicos.
-      </p>
-    </div>
-    <div class="card-image-wrapper">
-      <img
-          alt=""
-          class="card-image"
-          src="../assets/img/informesCom.webp"
-      />
-    </div>
-  </section>
-
-  <!-- Sección: Herramienta única -->
-  <section class="section-card">
-    <div class="card-image-wrapper">
-      <img
-          alt=""
-          class="card-image"
-          src="../assets/img/herrUn.webp"
-      />
-    </div>
-    <div class="card-content">
-      <h2>Herramienta única</h2>
-      <p>
-        Nuestra herramienta basada en Python es única en el mercado, ofreciendo
-        un enfoque integral y automatizado para el análisis de datos genómicos,
-        superando a las alternativas existentes.
-      </p>
-    </div>
+<!--    <div class="card-image-wrapper">-->
+<!--      <img-->
+<!--          alt=""-->
+<!--          class="card-image"-->
+<!--          src="../assets/img/analisisAuto.webp"-->
+<!--      />-->
+<!--    </div>-->
   </section>
 
   <!-- Carrusel de testimonios -->
