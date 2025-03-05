@@ -21,8 +21,8 @@
     <nav class="nav-menu">
       <router-link to="/">Inicio</router-link>
       <router-link to="/quienes-somos">Quiénes Somos</router-link>
-      <router-link to="/servicios">Servicios</router-link>
-      <router-link to="/blog">Blog</router-link>
+<!--      <router-link to="/servicios">Servicios</router-link>-->
+      <a href="https://blog.genomatech.es/" target="_blank" rel="noopener noreferrer">Blog</a>
       <router-link to="/contacto">Contacto</router-link>
     </nav>
   </header>
@@ -32,12 +32,12 @@
 header {
   line-height: 1.5;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   column-gap: 35dvw;
   align-items: center;
   flex-direction: row;
-  background-color: whitesmoke;
-  padding: 7px 0px 7px 0px;
+  background-color: #181818;
+  padding: 13px 0px 7px 0px;
   width: 100%;
   z-index: 10;
 }
@@ -72,6 +72,7 @@ a {
   font-size: large;
   border-radius: 10px;
   padding: 0px 10px 0px 10px;
+  font-weight: bold;
 }
 
 a:hover {

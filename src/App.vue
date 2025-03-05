@@ -2,6 +2,7 @@
 import NodeBackground from '@/components/NodeBackground.vue'
 import NavBar from '@/components/NavBar.vue'
 import FlechaParriba from "@/components/FlechaParriba.vue";
+import Footer from "@/components/Footer.vue";
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import FlechaParriba from "@/components/FlechaParriba.vue";
     <router-view class="router-view"/>
   </div>
 
+  <Footer/>
   <FlechaParriba/>
 </template>
 

@@ -4,6 +4,7 @@ import HomePage from '@/components/HomePage.vue'
 import QuienesSomos from '@/components/QuienesSomos.vue'
 import Servicios from '@/components/Servicios.vue'
 import Contacto from '@/components/Contacto.vue'
+import PoliticaPrivacidad from "@/components/PoliticaPrivacidad.vue";
 
 const routes = [
     {
@@ -25,6 +26,11 @@ const routes = [
         path: '/contacto',
         name: 'contacto',
         component: Contacto
+    },
+    {
+        path: '/politica',
+        name: 'politica',
+        component: PoliticaPrivacidad
     }
 ]
 

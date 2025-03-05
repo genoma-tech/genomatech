@@ -14,62 +14,151 @@
         soluciones integrales y automatizadas a empresas e instituciones de todo el mundo.
       </p>
 
-      <div class="about-cards">
-        <!-- Ejemplo de tarjeta 1 -->
+      <div class="team-cards">
+
         <div class="card">
           <img
-              src=""
+              src="../assets/img/team/celine.jpg"
               alt="Equipo GenomaTech"
               class="card-image"
           />
-          <h3 class="card-title">Nuestro Equipo</h3>
           <p class="card-text">
-            Un grupo de profesionales apasionados, comprometidos con el avance
-            científico y la optimización de procesos en el campo genómico.
+            CEO
+          </p>
+          <h3 class="card-title">Celine Jin</h3>
+          <p class="card-links">
           </p>
         </div>
 
-        <!-- Ejemplo de tarjeta 2 -->
         <div class="card">
           <img
-              src=""
-              alt="Laboratorio GenomaTech"
+              src="../assets/img/team/ana.jpg"
+              alt="Equipo GenomaTech"
               class="card-image"
           />
-          <h3 class="card-title">Nuestra Experiencia</h3>
           <p class="card-text">
-            Más de X años de experiencia en investigación,
-            consultoría y desarrollo de herramientas personalizadas para análisis
-            genómicos y bioinformáticos.
+            CEO
+          </p>
+          <h3 class="card-title">Ana Márquez</h3>
+        </div>
+
+        <div class="card">
+          <img
+              src="../assets/img/team/natalia.jpg"
+              alt="Equipo GenomaTech"
+              class="card-image"
+          />
+          <p class="card-text">
+            Bioinformatic
+          </p>
+          <h3 class="card-title">Natalia Toledano</h3>
+          <p class="card-links">
           </p>
         </div>
 
-        <!-- Ejemplo de tarjeta 3 -->
+
         <div class="card">
           <img
-              src=""
-              alt="Infraestructura GenomaTech"
+              src="../assets/img/team/andrea.jpg"
+              alt="Equipo GenomaTech"
               class="card-image"
           />
-          <h3 class="card-title">Nuestra Visión</h3>
           <p class="card-text">
-            Impulsar la transformación de la biotecnología y la bioinformática
-            a través de soluciones innovadoras y accesibles en todo el mundo.
+            Bioinformatic
+          </p>
+          <h3 class="card-title">Andrea García</h3>
+          <p class="card-links">
           </p>
         </div>
+
+
+        <div class="card">
+          <img
+              src="../assets/img/team/carlos.jpg"
+              alt="Equipo GenomaTech"
+              class="card-image"
+          />
+          <p class="card-text">
+            Developer
+          </p>
+          <h3 class="card-title">Carlos Sales</h3>
+          <p class="card-links">
+          </p>
+        </div>
+
+
+        <div class="card">
+          <img
+              src="../assets/img/team/luis.jpg"
+              alt="Equipo GenomaTech"
+              class="card-image"
+          />
+          <p class="card-text">
+            Data scientist
+          </p>
+          <h3 class="card-title">Luis Palomero</h3>
+          <p class="card-links">
+          </p>
+        </div>
+
+
+      </div>
+
+
+      <h2 class="about-title h2-icon"><img class="li-icon" src="../assets/img/valores.gif"/>Valores fundamentales</h2>
+      <p class="about-description left-full">
+        En GenomaTech, los valores no son solo principios, sino la base que impulsa cada decisión, cada acción y cada
+        innovación. Nos guiamos por los siguientes pilares:
+      </p>
+      <div class="valores-container info-container">
+        <ul>
+          <li>
+            <p><b>Excelencia operativa:</b> Aplicamos las mejores prácticas y mejoramos continuamente nuestros procesos
+            </p>
+          </li>
+          <li>
+            <p><b>Sinergia colaborativa:</b> Fomentamos un entorno dinámico donde la diversidad potencia la eficiencia
+            </p>
+          </li>
+          <li>
+            <p><b>Cultura de respeto:</b> Valoramos la inclusión y el pensamiento crítico como motores de innovación</p>
+          </li>
+          <li>
+            <p><b>Enfoque proactivo:</b> Nos anticipamos a los desafíos y actuamos con agilidad en un mundo en constante
+              cambio</p>
+          </li>
+        </ul>
+      </div>
+
+      <h2 class="about-title h2-icon"><img class="li-icon" src="../assets/img/jefe.gif"/>Compromisos de marca</h2>
+      <p class="about-description left-full">
+        Nos define más que lo que hacemos: cómo lo hacemos. Nuestra marca se fundamenta en compromisos sólidos que se
+        reflejan en los siguientes pilares:
+      </p>
+      <div class="marca-container info-container">
+        <ul>
+          <li>
+            <p><b>Responsabilidad y cumplimiento:</b> Transparencia, rigor y profesionalismo en cada entrega</p>
+          </li>
+          <li>
+            <p><b>Optimización e innovación continua:</b> Evolucionamos constantemente para mantenernos a la vanguardia
+            </p>
+          </li>
+          <li>
+            <p><b>Comunicación estratégica:</b> Fomentamos el diálogo claro y alineado con nuestros objetivos</p>
+          </li>
+          <li>
+            <p><b>Desarrollo del talento:</b> Impulsamos el crecimiento y liderazgo de nuestro equipo</p>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
 </template>
 
 <style scoped>
-/* Paleta de colores en línea con lo usado previamente,
-   ajusta estos valores a tu preferencia */
-:root {
-  --color-primary: #0066CC;
-  --color-bg-light: #f9f9f9;
-  --color-text: #333;
-  --color-shadow: rgba(0, 0, 0, 0.1);
+#quienes-somos {
+  font-size: clamp(10px, 2vw, 18px) !important;
 }
 
 .about-section {
@@ -78,7 +167,7 @@
 }
 
 .about-container {
-  max-width: 1100px;
+  max-width: 1225px;
   margin: 0 auto;
   text-align: center;
 }
@@ -88,6 +177,31 @@
   margin-bottom: 1rem;
   color: var(--color-primary);
   position: relative;
+}
+
+.info-container {
+  margin: 1rem auto 2rem auto;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.info-container b {
+  font-weight: bold;
+  padding-bottom: 15px;
+  color: #28137a;
+}
+
+.info-container ul {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  column-gap: 10px;
+  padding: 0;
+}
+
+.info-container li {
+  color: black;
+  padding: 10px 10px 5px 10px
 }
 
 .about-title::after {
@@ -107,11 +221,19 @@
   color: var(--color-text);
 }
 
+.left-full{
+  text-align: left;
+  width: 100%;
+  max-width: unset;
+  margin-left: 0;
+}
+
 /* Cards */
-.about-cards {
+.team-cards {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 /* Tarjeta individual */
@@ -130,8 +252,8 @@
 
 /* Imagen dentro de la tarjeta */
 .card-image {
-  width: 100%;
-  max-height: 200px;
+  width: 85%;
+  max-height: 300px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 1rem;
@@ -140,7 +262,8 @@
 /* Título de la tarjeta */
 .card-title {
   font-size: 1.25rem;
-  color: var(--color-primary);
+  color: var(--color-secondary);
+  font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
@@ -149,10 +272,17 @@
   color: var(--color-text);
   line-height: 1.5;
 }
-
+.h2-icon{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.li-icon{
+  height: 65px;
+}
 /* Responsividad */
 @media (min-width: 768px) {
-  .about-cards {
+  .team-cards {
     grid-template-columns: repeat(3, 1fr);
   }
 }

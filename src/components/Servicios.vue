@@ -35,17 +35,11 @@
 </template>
 
 <style scoped>
-/* Ejemplo de estilos, manteniendo coherencia con tus otras secciones */
-:root {
-  --color-primary: #0066CC;
-  --color-bg-light: #f9f9f9;
-  --color-text: #333;
-  --color-shadow: rgba(0, 0, 0, 0.1);
+#servicios {
+  height: calc(100dvh - 130px);
 }
-
 .purpose-section {
   padding: 3rem 1.5rem;
-  background-color: var(--color-bg-light);
 }
 
 .purpose-container {
@@ -75,7 +69,6 @@
   max-width: 800px;
   margin: 1rem auto;
   line-height: 1.6;
-  color: var(--color-text);
 }
 
 .purpose-content {

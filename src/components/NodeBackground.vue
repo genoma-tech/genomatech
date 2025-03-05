@@ -46,6 +46,7 @@ function hexToRgba(hex, alpha) {
 
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
+
 /**
  * Clase para nodos (partículas)
  */
@@ -143,8 +144,13 @@ function animate() {
  * Manejador de 'mousemove'
  */
 function handleMouse(e) {
-  mouse.x = e.x
-  mouse.y = e.y
+  if (!canvas) return
+  // Obtén la caja (bounding box) del canvas
+  const rect = canvas.getBoundingClientRect()
+
+  // Calcula coordenadas del puntero *relativas* al canvas
+  mouse.x = e.clientX - rect.left
+  mouse.y = e.clientY - rect.top
 
   // Opcional: limitar cuántos nodos “seguimos” creando
   if (nodes.length > numNodes) {
@@ -213,12 +219,13 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .background-canvas {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 65px;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: calc(100vh - 65px);
   z-index: -1; /* Para que quede detrás del contenido */
   pointer-events: none; /* Evita interferir con clicks en el contenido */
+  background-color: #132542;
 }
 </style>

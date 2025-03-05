@@ -1,90 +1,179 @@
 <script setup>
-// Script opcional (vacío por ahora)
+import {onMounted} from 'vue'
+
+onMounted(() => {
+  // Selecciona todos los elementos con clase "section-card hidden-up"
+  const sections = document.querySelectorAll('.section-card.hidden-up')
+
+  // Crea un IntersectionObserver
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('slide-down')
+        observer.unobserve(entry.target)
+      }
+    })
+  }, {
+    threshold: 0.35
+  })
+
+  // Observa cada sección
+  sections.forEach((section) => {
+    observer.observe(section)
+  })
+})
 </script>
 
 <template>
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">GENOMATECH</h1>
+      <div class="hero-title-container">
+        <h1 class="hero-title">GENOMATECH</h1>
+        <img
+            alt=""
+            class="hero-logo"
+            src="../assets/img/dna.svg"
+        />
+      </div>
       <p class="hero-subtitle">
-        "Conectados por el conocimiento, transformando la bioinformática"
+        Facilitamos el análisis de datos ómicos para su interpretación científica y clínica
       </p>
     </div>
   </section>
 
   <!-- Sección: Impulsando la bioinformática -->
-  <section class="section-card">
+  <section class="section-card pvalor">
+    <div class="card-content pvalor">
+      <h2>¿Cómo pensamos?</h2>
+      <p>
+        Cada día se generan enormes volúmenes de datos ómicos con el potencial de transformar la investigación. Sin
+        embargo, su análisis requiere herramientas especializadas y conocimiento avanzado, lo que supone un desafío para
+        muchos equipos.
+      </p>
+      <p>
+        En GenomaTech, convertimos datos en información procesable, ofreciendo soporte en bioinformática a equipos sin
+        unidad especializada, grupos saturados y laboratorios que
+        buscan nuevas alternativas.
+      </p>
+      <ul>
+        <li>
+          <img class="li-icon" src="../assets/img/compartir.gif"/>
+          <span>Identificar patrones biológicos</span>
+        </li>
+        <li>
+          <img class="li-icon" src="../assets/img/ocurrencia.gif"/>
+          <span>Validar hipótesis con precisión</span>
+        </li>
+        <li>
+          <img class="li-icon" src="../assets/img/latido.gif"/>
+          <span>Acelerar la innovación biomédica</span>
+        </li>
+      </ul>
+      <h3>Transformamos datos en conocimiento para impulsar la ciencia</h3>
+    </div>
+  </section>
+
+  <!-- Sección: Impulsando la bioinformática -->
+  <section class="section-card hidden-up">
     <div class="card-content">
       <h2>Análisis ómico</h2>
       <p>
-        Aplicamos herramientas bioinformáticas de vanguardia para procesar y analizar datos genómicos, transcriptómicos, proteómicos y metagenómicos. Nuestro enfoque combina precisión y eficiencia, permitiendo a investigadores y empresas extraer información clave para sus proyectos sin necesidad de invertir en infraestructura propia.
+        Aplicamos herramientas bioinformáticas de vanguardia para procesar y analizar datos genómicos, transcriptómicos,
+        proteómicos y metagenómicos.
       </p>
+      <p>
+        Nuestro enfoque combina precisión y eficiencia, permitiendo a investigadores y empresas extraer información
+        clave para sus proyectos sin necesidad de invertir en infraestructura propia.
+      </p>
+    </div>
+    <div class="card-image-wrapper">
+      <img
+          alt=""
+          class="card-image"
+          src="../assets/img/analisisAuto.webp"
+      />
     </div>
   </section>
 
   <!-- Sección: Impulsando la bioinformática -->
-  <section class="section-card">
+  <section class="section-card reverse hidden-up">
     <div class="card-content">
       <h2>Accesibilidad y optimización</h2>
       <p>
-        Eliminamos las barreras técnicas y económicas del análisis bioinformático, ofreciendo soluciones eficientes sin la necesidad de grandes inversiones en infraestructura o personal especializado. Con nuestro enfoque, democratizamos el acceso a tecnologías avanzadas, acelerando la toma de decisiones y potenciando la innovación.
+        Eliminamos las barreras técnicas y económicas del análisis bioinformático, ofreciendo soluciones eficientes sin
+        la necesidad de grandes inversiones en infraestructura o personal especializado.
       </p>
+      <p>
+        Con nuestro enfoque,
+        democratizamos el acceso a tecnologías avanzadas, acelerando la toma de decisiones y potenciando la innovación.
+      </p>
+    </div>
+    <div class="card-image-wrapper">
+      <img
+          alt=""
+          class="card-image"
+          src="../assets/img/analisisAuto.webp"
+      />
     </div>
   </section>
 
   <!-- Sección: Análisis automatizado -->
-  <section class="section-card">
+  <section class="section-card hidden-up">
     <div class="card-content">
       <h2>Asesoramiento personalizado</h2>
       <p>
-        Nos adaptamos a las necesidades específicas de cada cliente, brindando un servicio colaborativo y accesible. Acompañamos a empresas y grupos de investigación en cada etapa del análisis, asegurando que los resultados sean comprensibles y aplicables a sus objetivos científicos o estratégicos.
+        Nos adaptamos a las necesidades específicas de cada cliente, brindando un servicio colaborativo y accesible.
+      </p>
+      <p>
+        Acompañamos a empresas y grupos de investigación en cada etapa del análisis, asegurando que los resultados sean
+        comprensibles y aplicables a sus objetivos científicos o estratégicos.
       </p>
     </div>
-<!--    <div class="card-image-wrapper">-->
-<!--      <img-->
-<!--          alt=""-->
-<!--          class="card-image"-->
-<!--          src="../assets/img/analisisAuto.webp"-->
-<!--      />-->
-<!--    </div>-->
-  </section>
-
-  <!-- Carrusel de testimonios -->
-  <section class="testimonials-section">
-    <h2 class="testimonial-title">Testimonios</h2>
-
-    <!-- Contenedor del carrusel -->
-    <div class="carousel-container">
-      <!-- Radio buttons para controlar cada slide -->
-      <input type="radio" name="slider" id="slide1" checked/>
-      <input type="radio" name="slider" id="slide2"/>
-
-      <!-- Contenedor que "mueve" los slides -->
-      <div class="testimonios">
-        <div class="testimonio">
-          <p>
-            "GenomaTech ha sido un gran aliado en nuestros proyectos de
-            investigación, ofreciendo soluciones innovadoras y eficientes
-            para el análisis de datos genómicos."
-          </p>
-          <p>- Dr. Juan Pérez, Investigador Principal</p>
-        </div>
-
-        <div class="testimonio">
-          <p>
-            "La herramienta de GenomaTech ha revolucionado la forma en
-            que analizamos nuestros datos genómicos, permitiéndonos ahorrar
-            tiempo y recursos."
-          </p>
-          <p>- Dra. María López, Investigadora Asociada</p>
-        </div>
-      </div>
-
-      <!-- Flechas de navegación -->
-      <label for="slide1" class="arrow arrow-prev">&#10094;</label>
-      <label for="slide2" class="arrow arrow-next">&#10095;</label>
+    <div class="card-image-wrapper">
+      <img
+          alt=""
+          class="card-image"
+          src="../assets/img/analisisAuto.webp"
+      />
     </div>
   </section>
+
+  <!--  &lt;!&ndash; Carrusel de testimonios &ndash;&gt;-->
+  <!--  <section class="testimonials-section">-->
+  <!--    <h2 class="testimonial-title">Testimonios</h2>-->
+
+  <!--    &lt;!&ndash; Contenedor del carrusel &ndash;&gt;-->
+  <!--    <div class="carousel-container">-->
+  <!--      &lt;!&ndash; Radio buttons para controlar cada slide &ndash;&gt;-->
+  <!--      <input type="radio" name="slider" id="slide1" checked/>-->
+  <!--      <input type="radio" name="slider" id="slide2"/>-->
+
+  <!--      &lt;!&ndash; Contenedor que "mueve" los slides &ndash;&gt;-->
+  <!--      <div class="testimonios">-->
+  <!--        <div class="testimonio">-->
+  <!--          <p>-->
+  <!--            "GenomaTech ha sido un gran aliado en nuestros proyectos de-->
+  <!--            investigación, ofreciendo soluciones innovadoras y eficientes-->
+  <!--            para el análisis de datos genómicos."-->
+  <!--          </p>-->
+  <!--          <p>- Dr. Juan Pérez, Investigador Principal</p>-->
+  <!--        </div>-->
+
+  <!--        <div class="testimonio">-->
+  <!--          <p>-->
+  <!--            "La herramienta de GenomaTech ha revolucionado la forma en-->
+  <!--            que analizamos nuestros datos genómicos, permitiéndonos ahorrar-->
+  <!--            tiempo y recursos."-->
+  <!--          </p>-->
+  <!--          <p>- Dra. María López, Investigadora Asociada</p>-->
+  <!--        </div>-->
+  <!--      </div>-->
+
+  <!--      &lt;!&ndash; Flechas de navegación &ndash;&gt;-->
+  <!--      <label for="slide1" class="arrow arrow-prev">&#10094;</label>-->
+  <!--      <label for="slide2" class="arrow arrow-next">&#10095;</label>-->
+  <!--    </div>-->
+  <!--  </section>-->
 </template>
 
 <style scoped>
@@ -119,16 +208,14 @@ p {
 ===========================================================================
 */
 .hero {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
-  margin: 2rem auto;
+  margin: 2rem 17rem;
   padding: 2rem 1rem;
   border-radius: 12px;
-  box-shadow: 0 2px 10px var(--color-shadow);
-  max-width: 1100px;
-  background: url("../assets/img/homePageFooter.png") no-repeat center center/cover;
+  max-width: 900px;
+  height: calc(100vh - 60px);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: default;
 }
 
 .hero-content {
@@ -137,9 +224,25 @@ p {
   margin: 1rem;
 }
 
+.hero-title-container {
+  display: flex;
+  align-items: flex-end
+}
+
+.hero-title-container img {
+  height: 150px;
+  margin-left: 70px;
+  transform: rotate(90deg);
+}
+
 .hero-title {
+  position: relative;
   font-size: 5rem;
+  width: 36rem;
   margin-bottom: 1rem;
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
@@ -182,7 +285,6 @@ p {
   max-height: 300px;
   object-fit: contain;
   border-radius: 16px;
-  box-shadow: 0 2px 8px var(--color-shadow);
 }
 
 /*
@@ -195,28 +297,100 @@ p {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background: color-mix(in srgb, var(--color-bg-light) 85%, transparent);
-  margin: 2rem auto;
-  padding: 2rem 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px var(--color-shadow);
-  max-width: 1100px;
-  color: var(--color-bg-dark)
+  margin: 5rem auto;
+  max-width: 1200px;
+  color: #181818
 }
 
 .section-card.reverse {
   flex-direction: row-reverse;
 }
 
+.section-card.pvalor{
+  //background: white;
+}
+
 .card-content {
   flex: 1 1 400px;
   padding: 1rem;
+  font-size: clamp(16px, 5vw, 22px);
 }
 
 .card-content h2 {
-  margin-bottom: 0.75rem;
-  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 2.5rem;
+  color: var(--color-primary);
 }
+
+.card-content.pvalor h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-primary);
+  margin: 0.5rem auto 0 auto;
+  border-radius: 2px;
+}
+
+.card-content h3 {
+  color: #181818;
+  font-weight: 100;
+}
+
+.card-content.pvalor h2, h3 {
+  text-align: center;
+}
+
+.card-content.pvalor p {
+  text-align: justify;
+}
+
+
+.card-content.pvalor ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.card-content.pvalor ul li {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  width: 24%;
+  text-align: center;
+  background: #c6a9ffc9;
+  color: #28137a;
+  font-weight: bold;
+  height: 125px;
+  margin: 2rem auto;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+/* Definimos la animación */
+@keyframes bounceHover {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.card-content.pvalor ul li:hover {
+  box-shadow: 0px 0px 10px 4px rgba(51, 204, 204, 0.5);
+  animation: bounceHover 0.5s ease-in-out infinite;
+}
+
+.card-content.pvalor ul li .li-icon {
+  width: 50px;
+  height: 50px;
+}
+
 
 .card-image-wrapper {
   flex: 1 1 400px;
@@ -228,13 +402,27 @@ p {
   width: 100%;
   max-width: 400px;
   border-radius: 12px;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
   box-shadow: 0 2px 8px var(--color-shadow);
 }
 
 .card-image:hover {
-  box-shadow: 0 4px 12px var(--color-shadow-hover);
   transform: scale(1.02);
+}
+
+.hidden-up {
+  opacity: 0;
+  transform: translateY(-100px);
+}
+
+.slide-down {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+p {
+  margin-top: 35px;
+  text-align: justify;
 }
 
 /*
@@ -291,7 +479,6 @@ p {
   box-sizing: border-box;
   background-color: var(--color-bg-light);
   border-radius: 12px;
-  box-shadow: 0 2px 8px var(--color-shadow);
   margin: 0 1rem;
 }
 
