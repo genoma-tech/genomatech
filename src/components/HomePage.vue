@@ -90,7 +90,7 @@ onMounted(() => {
       <img
           alt=""
           class="card-image"
-          src="../assets/img/analisisAuto.webp"
+          src="../assets/img/pdf1.png"
       />
     </div>
   </section>
@@ -112,7 +112,7 @@ onMounted(() => {
       <img
           alt=""
           class="card-image"
-          src="../assets/img/analisisAuto.webp"
+          src="../assets/img/pdf3.png"
       />
     </div>
   </section>
@@ -133,7 +133,7 @@ onMounted(() => {
       <img
           alt=""
           class="card-image"
-          src="../assets/img/analisisAuto.webp"
+          src="../assets/img/pdf2.png"
       />
     </div>
   </section>

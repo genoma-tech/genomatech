@@ -23,7 +23,7 @@
               class="card-image"
           />
           <p class="card-text">
-            CEO
+            Project Manager
           </p>
           <h3 class="card-title">Celine Jin</h3>
           <p class="card-links">
@@ -37,7 +37,7 @@
               class="card-image"
           />
           <p class="card-text">
-            CEO
+            Bioinformatic
           </p>
           <h3 class="card-title">Ana Márquez</h3>
         </div>

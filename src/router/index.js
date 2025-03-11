@@ -5,6 +5,7 @@ import QuienesSomos from '@/components/QuienesSomos.vue'
 import Servicios from '@/components/Servicios.vue'
 import Contacto from '@/components/Contacto.vue'
 import PoliticaPrivacidad from "@/components/PoliticaPrivacidad.vue";
+import Formulario from "@/components/Formulario.vue";
 
 const routes = [
     {
@@ -31,6 +32,11 @@ const routes = [
         path: '/politica',
         name: 'politica',
         component: PoliticaPrivacidad
+    },
+    {
+        path: '/formulario',
+        name: 'formulario',
+        component: Formulario
     }
 ]
 

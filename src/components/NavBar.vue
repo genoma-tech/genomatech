@@ -22,7 +22,8 @@
       <router-link to="/">Inicio</router-link>
       <router-link to="/quienes-somos">Quiénes Somos</router-link>
 <!--      <router-link to="/servicios">Servicios</router-link>-->
-      <a href="https://blog.genomatech.es/" target="_blank" rel="noopener noreferrer">Blog</a>
+<!--      <a href="https://blog.genomatech.es/" target="_blank" rel="noopener noreferrer">Blog</a>-->
+      <router-link to="/formulario">Formulario</router-link>
       <router-link to="/contacto">Contacto</router-link>
     </nav>
   </header>
