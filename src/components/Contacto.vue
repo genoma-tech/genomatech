@@ -210,7 +210,8 @@ function handleSubmit(event) {
                   required
               />
               <label class="consent-text" for="terms"
-              >Acepto que mis datos serán utilizados únicamente para fines de contacto, y para recibir comunicación de newsletter.</label
+              >Acepto que mis datos serán utilizados únicamente para fines de contacto, y para recibir comunicación de
+                newsletter.</label
               >
             </div>
             <button type="submit" name="enviar_formulario" id="enviar">
@@ -471,6 +472,15 @@ function handleSubmit(event) {
 
   .logo {
     width: 150px;
+  }
+
+  .contact-section {
+    max-height: unset !important;
+    background: white;
+  }
+
+  .contact-container {
+    box-shadow: unset !important;
   }
 }
 </style>

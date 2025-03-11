@@ -22,30 +22,32 @@ library.add(faFacebook, faXTwitter, faYoutube, faLinkedin, faInstagram, faEnvelo
 
       </div>
 
-      <!-- Síguenos -->
-      <div class="section">
-        <h2>Síguenos</h2>
-        <ul>
-          <li>
-            <font-awesome-icon :icon="['fab', 'linkedin']"/>
-            <a href="https://www.linkedin.com/company/genomatech" target="_blank" class="contact-link">
-              GenomaTech
-            </a>
-          </li>
-        </ul>
-      </div>
+      <div class="sections">
+        <!-- Síguenos -->
+        <div class="section">
+          <h2>Síguenos</h2>
+          <ul>
+            <li>
+              <font-awesome-icon :icon="['fab', 'linkedin']"/>
+              <a href="https://www.linkedin.com/company/genomatech" target="_blank" class="contact-link">
+                GenomaTech
+              </a>
+            </li>
+          </ul>
+        </div>
 
-      <!-- Contáctanos -->
-      <div class="section">
-        <h2>Contáctanos</h2>
-        <ul>
-          <li>
-            <font-awesome-icon :icon="['fa', 'envelope']"/>
-            <a href="mailto:info@genomatech.es">
-              info@genomatech.es
-            </a>
-          </li>
-        </ul>
+        <!-- Contáctanos -->
+        <div class="section">
+          <h2>Contáctanos</h2>
+          <ul>
+            <li>
+              <font-awesome-icon :icon="['fa', 'envelope']"/>
+              <a href="mailto:info@genomatech.es">
+                info@genomatech.es
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -58,9 +60,9 @@ library.add(faFacebook, faXTwitter, faYoutube, faLinkedin, faInstagram, faEnvelo
         <li>
           <router-link to="/politica">Política de privacidad</router-link>
         </li>
-<!--        <li><a href="#">Aviso legal</a></li>-->
-<!--        <li><a href="#">Política de cookies</a></li>-->
-<!--        <li><a href="#">Condiciones de compra</a></li>-->
+        <!--        <li><a href="#">Aviso legal</a></li>-->
+        <!--        <li><a href="#">Política de cookies</a></li>-->
+        <!--        <li><a href="#">Condiciones de compra</a></li>-->
       </ul>
     </div>
   </footer>
@@ -154,5 +156,22 @@ library.add(faFacebook, faXTwitter, faYoutube, faLinkedin, faInstagram, faEnvelo
 
 .legal ul li a:hover {
   text-decoration: underline;
+}
+
+.container .sections {
+  display: contents;
+}
+/*
+===========================================================================
+                          Media Queries para móvil
+===========================================================================
+*/
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .container .sections {
+    display: flex;
+  }
 }
 </style>

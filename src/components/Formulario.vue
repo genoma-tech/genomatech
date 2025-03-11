@@ -8,13 +8,15 @@
     <div class="about-container">
       <h2 class="about-title">Conectados por el conocimiento</h2>
       <p class="about-description">
-        La bioinformática es un campo lleno de mentes curiosas y talentosas, y queremos formar una red donde el conocimiento fluya y las ideas se conviertan en oportunidades. Nos interesa conocer tu experiencia: qué te motiva, en qué trabajas, qué herramientas usas y cómo podemos aportar valor a esta comunidad en crecimiento.
+        La bioinformática es un campo lleno de mentes curiosas y talentosas, y queremos formar una red donde el
+        conocimiento fluya y las ideas se conviertan en oportunidades. Nos interesa conocer tu experiencia: qué te
+        motiva, en qué trabajas, qué herramientas usas y cómo podemos aportar valor a esta comunidad en crecimiento.
       </p>
       <p class="about-description">
         ¡Déjanos tu huella! 👇
       </p>
 
-      <iframe src="https://tally.so/r/n9o601" width="720" height="720" frameborder="0"
+      <iframe src="https://tally.so/r/n9o601" frameborder="0"
               marginheight="0" marginwidth="0">
         Cargando…
       </iframe>
@@ -88,7 +90,7 @@
   color: var(--color-text);
 }
 
-.left-full{
+.left-full {
   text-align: left;
   width: 100%;
   max-width: unset;
@@ -139,18 +141,69 @@
   color: var(--color-text);
   line-height: 1.5;
 }
-.h2-icon{
+
+.h2-icon {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.li-icon{
+
+.li-icon {
   height: 65px;
 }
-/* Responsividad */
+
+iframe {
+  width: 70%;
+  height: 720px;
+}
+
+/* Media Query para pantallas medianas en adelante */
 @media (min-width: 768px) {
   .team-cards {
+    /* A partir de 768px, 3 columnas */
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Media Query para pantallas pequeñas (opcional, si deseas más cambios específicos) */
+@media (max-width: 480px) {
+  .about-section {
+    padding: 2rem 1rem;
+  }
+
+  .about-title {
+    font-size: 1.5rem;
+  }
+
+  .team-cards {
+    /* A partir de 768px, 3 columnas */
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .li-icon {
+    height: 50px;
+  }
+
+  li {
+    list-style-type: none;
+    text-align: center !important;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+  }
+
+  #quienes-somos {
+    font-size: clamp(14px, 4vw, 22px) !important;
+  }
+
+  p {
+    text-align: center !important;
+  }
+
+  iframe {
+    width: 100%;
+    height: 720px;
   }
 }
 </style>

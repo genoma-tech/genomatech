@@ -1,6 +1,9 @@
 <script setup>
-// Por ahora no necesitas lógica de composición especial,
-// a menos que quieras manejar estados o props.
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {faLinkedin} from '@fortawesome/free-brands-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
+
+library.add(faLinkedin);
 </script>
 
 <template>
@@ -22,12 +25,13 @@
               alt="Equipo GenomaTech"
               class="card-image"
           />
-          <p class="card-text">
-            Project Manager
-          </p>
+          <p class="card-text">Project Manager</p>
           <h3 class="card-title">Celine Jin</h3>
-          <p class="card-links">
-          </p>
+          <div class="card-icon">
+            <a href="https://www.linkedin.com/in/celinelinnajin/" target="_blank" class="contact-link">
+              <font-awesome-icon :icon="['fab', 'linkedin']"/>
+            </a>
+          </div>
         </div>
 
         <div class="card">
@@ -36,10 +40,13 @@
               alt="Equipo GenomaTech"
               class="card-image"
           />
-          <p class="card-text">
-            Bioinformatic
-          </p>
+          <p class="card-text">Bioinformatic</p>
           <h3 class="card-title">Ana Márquez</h3>
+          <div class="card-icon">
+            <a href="https://www.linkedin.com/in/amarquezbq/" target="_blank" class="contact-link">
+              <font-awesome-icon :icon="['fab', 'linkedin']"/>
+            </a>
+          </div>
         </div>
 
         <div class="card">
@@ -48,14 +55,14 @@
               alt="Equipo GenomaTech"
               class="card-image"
           />
-          <p class="card-text">
-            Bioinformatic
-          </p>
+          <p class="card-text">Bioinformatic</p>
           <h3 class="card-title">Natalia Toledano</h3>
-          <p class="card-links">
-          </p>
+          <div class="card-icon">
+            <a href="https://www.linkedin.com/in/natalia-toledano-albarr%C3%A1n/" target="_blank" class="contact-link">
+              <font-awesome-icon :icon="['fab', 'linkedin']"/>
+            </a>
+          </div>
         </div>
-
 
         <div class="card">
           <img
@@ -63,14 +70,14 @@
               alt="Equipo GenomaTech"
               class="card-image"
           />
-          <p class="card-text">
-            Bioinformatic
-          </p>
+          <p class="card-text">Bioinformatic</p>
           <h3 class="card-title">Andrea García</h3>
-          <p class="card-links">
-          </p>
+          <div class="card-icon">
+            <a href="https://www.linkedin.com/in/andrea-garc%C3%ADa-alcaide-95b9a8213/" target="_blank" class="contact-link">
+              <font-awesome-icon :icon="['fab', 'linkedin']"/>
+            </a>
+          </div>
         </div>
-
 
         <div class="card">
           <img
@@ -78,14 +85,14 @@
               alt="Equipo GenomaTech"
               class="card-image"
           />
-          <p class="card-text">
-            Developer
-          </p>
+          <p class="card-text">Developer</p>
           <h3 class="card-title">Carlos Sales</h3>
-          <p class="card-links">
-          </p>
+          <div class="card-icon">
+            <a href="https://www.linkedin.com/in/carlos-sales-perales/" target="_blank" class="contact-link">
+              <font-awesome-icon :icon="['fab', 'linkedin']"/>
+            </a>
+          </div>
         </div>
-
 
         <div class="card">
           <img
@@ -93,19 +100,21 @@
               alt="Equipo GenomaTech"
               class="card-image"
           />
-          <p class="card-text">
-            Data scientist
-          </p>
+          <p class="card-text">Data scientist</p>
           <h3 class="card-title">Luis Palomero</h3>
-          <p class="card-links">
-          </p>
+          <div class="card-icon">
+            <a href="https://www.linkedin.com/in/luispalomero/" target="_blank" class="contact-link">
+              <font-awesome-icon :icon="['fab', 'linkedin']"/>
+            </a>
+          </div>
         </div>
-
 
       </div>
 
-
-      <h2 class="about-title h2-icon"><img class="li-icon" src="../assets/img/valores.gif"/>Valores fundamentales</h2>
+      <h2 class="about-title h2-icon">
+        <img class="li-icon" src="../assets/img/valores.gif"/>
+        Valores fundamentales
+      </h2>
       <p class="about-description left-full">
         En GenomaTech, los valores no son solo principios, sino la base que impulsa cada decisión, cada acción y cada
         innovación. Nos guiamos por los siguientes pilares:
@@ -130,7 +139,10 @@
         </ul>
       </div>
 
-      <h2 class="about-title h2-icon"><img class="li-icon" src="../assets/img/jefe.gif"/>Compromisos de marca</h2>
+      <h2 class="about-title h2-icon">
+        <img class="li-icon" src="../assets/img/jefe.gif"/>
+        Compromisos de marca
+      </h2>
       <p class="about-description left-full">
         Nos define más que lo que hacemos: cómo lo hacemos. Nuestra marca se fundamenta en compromisos sólidos que se
         reflejan en los siguientes pilares:
@@ -157,6 +169,7 @@
 </template>
 
 <style scoped>
+/* Ajusta el tamaño base de fuente con clamp para que sea flexible */
 #quienes-somos {
   font-size: clamp(10px, 2vw, 18px) !important;
 }
@@ -179,6 +192,32 @@
   position: relative;
 }
 
+.about-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-primary);
+  margin: 0.5rem auto 0 auto;
+  border-radius: 2px;
+}
+
+.about-description {
+  max-width: 800px;
+  margin: 1rem auto 2rem auto;
+  line-height: 1.6;
+  color: var(--color-text);
+  text-align: justify;
+}
+
+.left-full {
+  text-align: left;
+  width: 100%;
+  max-width: unset;
+  margin-left: 0;
+}
+
+/* Contenedores de info (valores y marca) */
 .info-container {
   margin: 1rem auto 2rem auto;
   line-height: 1.6;
@@ -201,36 +240,13 @@
 
 .info-container li {
   color: black;
-  padding: 10px 10px 5px 10px
+  padding: 10px 10px 5px 10px;
 }
 
-.about-title::after {
-  content: "";
-  display: block;
-  width: 80px;
-  height: 3px;
-  background-color: var(--color-primary);
-  margin: 0.5rem auto 0 auto;
-  border-radius: 2px;
-}
-
-.about-description {
-  max-width: 800px;
-  margin: 1rem auto 2rem auto;
-  line-height: 1.6;
-  color: var(--color-text);
-}
-
-.left-full{
-  text-align: left;
-  width: 100%;
-  max-width: unset;
-  margin-left: 0;
-}
-
-/* Cards */
+/* Cards del equipo */
 .team-cards {
   display: grid;
+  /* Por defecto, 1 columna (ideal para móvil). */
   grid-template-columns: 1fr;
   gap: 2rem;
   margin-bottom: 3rem;
@@ -250,7 +266,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Imagen dentro de la tarjeta */
 .card-image {
   width: 85%;
   max-height: 300px;
@@ -259,7 +274,6 @@
   margin-bottom: 1rem;
 }
 
-/* Título de la tarjeta */
 .card-title {
   font-size: 1.25rem;
   color: var(--color-secondary);
@@ -267,23 +281,67 @@
   margin-bottom: 0.5rem;
 }
 
-/* Texto de la tarjeta */
 .card-text {
   color: var(--color-text);
   line-height: 1.5;
 }
-.h2-icon{
+
+.h2-icon {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.li-icon{
+
+.li-icon {
   height: 65px;
 }
-/* Responsividad */
+
+::v-deep(.card-icon svg path) {
+  fill: var(--color-primary);
+}
+
+/* Media Query para pantallas medianas en adelante */
 @media (min-width: 768px) {
   .team-cards {
+    /* A partir de 768px, 3 columnas */
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Media Query para pantallas pequeñas (opcional, si deseas más cambios específicos) */
+@media (max-width: 480px) {
+  .about-section {
+    padding: 2rem 1rem;
+  }
+
+  .about-title {
+    font-size: 1.5rem;
+  }
+
+  .team-cards {
+    /* A partir de 768px, 3 columnas */
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .li-icon {
+    height: 50px;
+  }
+
+  li {
+    list-style-type: none;
+    text-align: center !important;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+  }
+
+  #quienes-somos {
+    font-size: clamp(14px, 4vw, 22px) !important;
+  }
+
+  p {
+    text-align: center !important;
   }
 }
 </style>

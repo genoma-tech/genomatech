@@ -18,8 +18,8 @@ import Footer from "@/components/Footer.vue";
 </template>
 
 <style scoped>
-#main-content__ {
-  margin-top: 60px !important;
+#main-content {
+  margin-top: 65px !important;
 }
 
 </style>

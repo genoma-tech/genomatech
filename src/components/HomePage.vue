@@ -200,6 +200,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 0.5rem 0;
   line-height: 1.5;
+  text-align: justify;
 }
 
 /*
@@ -544,9 +545,47 @@ p {
   display: none;
 }
 
+/*
+===========================================================================
+                          Media Queries para móvil
+===========================================================================
+*/
 @media (max-width: 768px) {
-  /* Ajustes responsivos */
+  /* Ajustes generales y del Hero en móviles */
+  .hero {
+    margin: 1rem;
+    padding: 0 !important;
+    height: 90dvh;
+    max-width: 100%;
+    display: flex;
+  }
+
+  .hero-title-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title-container img {
+    margin-left: 0;
+    margin-top: 1rem;
+    transform: none; /* Para que no gire en móvil (o adapta a tu gusto) */
+    height: 80px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    width: auto; /* Quita ancho fijo para que ajuste al contenido */
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  /* Ajustes de las secciones / tarjetas en móvil */
   .section-card {
+    margin: 2rem 1rem;
     flex-direction: column;
   }
 
@@ -554,16 +593,26 @@ p {
     flex-direction: column;
   }
 
-  .card-image, .hero-image {
-    max-width: 100%;
+  .card-content, h2 {
+    font-size: 1.5rem !important;
+    text-align: center;
   }
 
-  .testimonio {
+  .card-content, .card-image-wrapper {
+    flex: none;
+    width: 100%;
+    font-size: clamp(14px, 4vw, 22px) !important;
+  }
+
+  /* Ajusta la lista de elementos "pvalor" para que cada ítem sea bloque en lugar de lado a lado */
+  .card-content.pvalor ul {
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .card-content.pvalor ul li {
+    width: 100%;
     margin: 1rem 0;
-  }
-
-  .testimonios {
-    width: 200%;
   }
 }
 </style>
