@@ -139,6 +139,7 @@ a:hover {
   /* Mostramos el botón hamburguesa */
   .mobile-menu-btn {
     display: block;
+    padding-right: 15px;
   }
 
   /* Por defecto, el menú de navegación no se muestra en móvil */
