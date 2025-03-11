@@ -25,7 +25,7 @@ import Footer from "@/components/Footer.vue";
 /* Para pantallas pequeñas (móvil/tablet) */
 @media (max-width: 1023px) {
   #main-content {
-    margin-top: 0 !important;
+    margin-top: 40px !important;
   }
 }
 
